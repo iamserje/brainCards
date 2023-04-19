@@ -1,4 +1,5 @@
 import { createComponent } from "../helpers/create-element.js";
+import { declarePare } from "../helpers/declareNum.js";
 
 export function createCategory(app) {
    const sectionCategory = createComponent('section', {
@@ -32,7 +33,7 @@ export function createCategory(app) {
       });
       const categoryPairs = createComponent('span', {
          className: 'category__pairs',
-         textContent: `${data.length} ${(data.length%10 === 2 || data.length%10 === 3 || data.length%10 === 4) ? 'пары' : (data.length%10 === 1 ? 'пара' : 'пар')}`,
+         textContent: declarePare(data.length, ['пары', 'пара', 'пар']),
       });
       categoryCardButton.append(categoryTitle, categoryPairs);
 
