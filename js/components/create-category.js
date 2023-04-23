@@ -52,9 +52,9 @@ export function createCategory(app) {
 
    function mount(data) {
       categoryList.textContent = '';
-      app.append(sectionCategory);
       const cards = data.map(createCategoryCard);
       categoryList.append(...cards);
+      app.append(sectionCategory);
    }
 
    function unmount() {
